@@ -1,0 +1,10 @@
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
+
+[git_status]
+disabled = true
+
+[git_branch]
+only_attached = true

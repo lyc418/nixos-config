@@ -1,0 +1,41 @@
+source $VIMRUNTIME/vimrc_example.vim
+set enc=UTF-8
+set fenc=UTF-8
+set termencoding=UTF-8
+
+set nocompatible
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set showmatch
+set smartindent
+set backspace=indent,eol,start
+
+set noundofile
+set nobackup
+set nowritebackup
+set noswapfile
+
+set wildmenu
+set cursorline
+set background=dark
+syntax on
+filetype plugin indent on
+
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+
+set number
+augroup nt
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+	autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup end
+
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {{ {
+inoremap {} {}
+
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz

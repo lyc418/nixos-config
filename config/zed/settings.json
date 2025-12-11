@@ -1,0 +1,29 @@
+{
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Ayu Dark"
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light":"Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+
+  "ui_font_family": "SF Pro Display",
+  "ui_font_fallbacks": [".SystemUIFont"],
+  "ui_font_size": 16,
+  "ui_font_weight": 500,
+  "buffer_font_family": "ComicShannsMono Nerd Font",
+  "buffer_font_fallbacks": [".ZedMono"],
+  "buffer_font_size": 18,
+
+  "autosave": "on_focus_change",
+  "format_on_save": "off",
+
+  "tabs": {
+    "file_icons": true
+  },
+
+  "base_keymap":"Emacs"
+}
