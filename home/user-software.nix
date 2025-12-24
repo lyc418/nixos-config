@@ -125,6 +125,7 @@
     })
     winetricks
     prismlauncher
+    haguichi
     mangohud
   ];
 

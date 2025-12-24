@@ -3,4 +3,4 @@ size = 14
 builtin_box_drawing = true
 
 [font.normal]
-family = "Agave Nerd Font"
+family = "ComicShannsMono Nerd Font"
