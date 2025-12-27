@@ -90,7 +90,6 @@
     yaml-language-server
     pyright
     verible
-    python313 python313Packages.ipython
 
     libreoffice-qt6-fresh
     maestral-gui maestral

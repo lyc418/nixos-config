@@ -39,20 +39,28 @@
     "nohz_full=1"
     "mitigations=off"
     "nvidia-drm.modeset=1"
+    "usbcore.autosuspend=-1"
+    "intel_pstate=passive"
+    "processor.max_cstate=1"
   ];
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
     "vm.vfs_cache_pressure" = 50;
+    "vm.dirty_ratio" = 10;
+    "vm.dirty_background_ratio" = 5;
   };
 
   powerManagement.cpuFreqGovernor = "performance";
 
   zramSwap = {
     enable = true;
-    algorithm = "lz4";
+    algorithm = "zstd";
+    memoryPercent = 50;
   };
 
   hardware.bluetooth.enable = true;
+  hardware.openrazer.enable = true;
+  hardware.openrazer.users = [ "ethan" ];
 
   time.timeZone = "Asia/Taipei";
 
@@ -121,6 +129,7 @@
       nerd-fonts.comic-shanns-mono
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
+      sarasa-gothic
     ];
     fontconfig = {
       enable = true;
@@ -144,15 +153,6 @@
 
   documentation.dev.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    vim-full
-    wget
-    bash
-    qemu
-    man-pages
-    man-pages-posix
-  ];
-
   environment.variables = {
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
@@ -165,6 +165,9 @@
   };
 
   nix.settings = {
+    auto-optimise-store = true;
+    max-jobs = "auto";
+    cores = 0;
     substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
@@ -179,5 +182,12 @@
     "nix-command"
     "flakes"
   ];
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+
   system.stateVersion = "25.05";
 }

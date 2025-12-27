@@ -1,9 +1,31 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.config.android_sdk.accept_license = true;
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    python313
+    stdenv.cc.cc.lib
+    zlib
+    libGL
+    libGLU
+    glib
+    glib-networking
+    dbus
+    fontconfig
+    freetype
+    libxkbcommon
+    xorg.libxcb
+    xorg.libX11
+    xorg.libXi
+    xorg.libXrender
+    xorg.libXext
+    xorg.xcbutilwm
+    xorg.xcbutilimage
+    xorg.xcbutilkeysyms
+    xorg.xcbutilrenderutil
+    wayland
+  ];
   programs.niri = {
     enable = true;
   };
@@ -41,9 +63,27 @@
       obs-vaapi
     ];
   };
+  programs.gpu-screen-recorder.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    vim-full
+    wget
+    bash
+    qemu
+    man-pages
+    man-pages-posix
+    polychromatic
+    gpu-screen-recorder-gtk
+    easyeffects
+    python313
+    python313Packages.ipython
+    uv
+  ];
 
   virtualisation.docker = {
     enable = true;
+    enableOnBoot = false;
+    autoPrune.enable = true;
   };
   virtualisation.libvirtd = {
     enable = true;

@@ -6,24 +6,34 @@
   },
   "icon_theme": {
     "mode": "dark",
-    "light":"Zed (Default)",
+    "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
-
   "ui_font_family": "SF Pro Display",
-  "ui_font_fallbacks": [".SystemUIFont"],
+  "ui_font_fallbacks": [
+    ".SystemUIFont"
+  ],
   "ui_font_size": 16,
   "ui_font_weight": 500,
   "buffer_font_family": "ComicShannsMono Nerd Font",
-  "buffer_font_fallbacks": [".ZedMono"],
+  "buffer_font_fallbacks": [
+    ".ZedMono"
+  ],
   "buffer_font_size": 18,
-
   "autosave": "on_focus_change",
   "format_on_save": "off",
-
   "tabs": {
     "file_icons": true
   },
-
-  "base_keymap":"Emacs"
+  "base_keymap": "Emacs",
+  "mcpServers": {
+    "ida-pro-mcp": {
+      "command": "/etc/profiles/per-user/ethan/bin/python3",
+      "args": [
+        "/home/ethan/.local/share/uv/tools/ida-pro-mcp/lib/python3.13/site-packages/ida_pro_mcp/server.py",
+        "--ida-rpc",
+        "http://127.0.0.1:13337"
+      ]
+    }
+  }
 }
