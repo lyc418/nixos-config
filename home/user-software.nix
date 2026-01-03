@@ -42,8 +42,6 @@
     htop
     nvtopPackages.full
     usbutils
-    ltrace
-    strace
 
     gcc
     gdb
@@ -101,6 +99,7 @@
     typst
 
     google-chrome
+    microsoft-edge
     tor-browser
     discord
     telegram-desktop
@@ -111,7 +110,6 @@
     jetbrains.jdk
 
     claude-code
-    gemini-cli
 
     gamescope
     steam-run

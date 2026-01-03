@@ -118,38 +118,59 @@
   fonts = {
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-      fira-code
-      fira-code-symbols
-      liberation_ttf
-      corefonts
-      vista-fonts
-      nerd-fonts.agave
-      nerd-fonts.comic-shanns-mono
-      nerd-fonts.fira-code
-      nerd-fonts.jetbrains-mono
-      sarasa-gothic
+        noto-fonts-cjk-sans
+        noto-fonts-color-emoji
+        fira-code
+        fira-code-symbols
+        liberation_ttf
+        corefonts
+        vista-fonts
+        nerd-fonts.agave
+        nerd-fonts.comic-shanns-mono
+        nerd-fonts.fira-code
+        nerd-fonts.jetbrains-mono
+        sarasa-gothic
     ];
     fontconfig = {
       enable = true;
+      antialias = true;
+      hinting = {
+        enable = true;
+        style = "slight";
+        autohint = false;
+      };
+      subpixel = {
+        rgba = "rgb";
+        lcdfilter = "default";
+      };
       defaultFonts = {
         serif = [
           "Sarasa UI SC"
-          "Noto Serif CJK TC"
+            "Noto Serif CJK TC"
         ];
         sansSerif = [
           "Sarasa UI SC"
-          "Noto Sans CJK TC"
+            "Noto Sans CJK TC"
         ];
         monospace = [
           "Fira Code"
-          "JetbrainsMono Nerd Font"
+            "JetbrainsMono Nerd Font"
         ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
   };
+  fonts.fontconfig.localConf = ''
+    <?xml version="1.0"?>
+    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    <fontconfig>
+    <match target="font">
+    <edit name="embeddedbitmap" mode="assign">
+    <bool>false</bool>
+    </edit>
+    </match>
+    </fontconfig>
+    '';
 
   documentation.dev.enable = true;
 
@@ -162,6 +183,7 @@
     MOZ_ENABLE_WAYLAND = "1";
     EDITOR = "nvim";
     VISUAL = "nvim";
+    FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:warping=1";
   };
 
   nix.settings = {
