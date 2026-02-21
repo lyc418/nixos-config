@@ -46,8 +46,11 @@
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
     "vm.vfs_cache_pressure" = 50;
-    "vm.dirty_ratio" = 10;
+    "vm.dirty_ratio" = 15;
     "vm.dirty_background_ratio" = 5;
+    "vm.dirty_writeback_centisecs" = 1500;
+    "vm.dirty_expire_centisecs" = 3000;
+    "vm.page-cluster" = 0;
   };
 
   powerManagement.cpuFreqGovernor = "performance";

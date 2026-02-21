@@ -16,7 +16,36 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1e4c0bb6-45b0-4251-b2f0-08c1e2ec9811";
       fsType = "btrfs";
-      options = [ "compress=zstd" "noatime" "discard=async" ];
+      options = [
+        "compress=zstd:3"
+        "noatime"
+        "discard=async"
+        "space_cache=v2"
+        "commit=120"
+        "ssd"
+      ];
+    };
+
+  fileSystems."/tmp" =
+    { device = "tmpfs";
+      fsType = "tmpfs";
+      options = [
+        "size=16G"
+        "mode=1777"
+        "nosuid"
+        "nodev"
+      ];
+    };
+
+  fileSystems."/var/tmp" =
+    { device = "tmpfs";
+      fsType = "tmpfs";
+      options = [
+        "size=8G"
+        "mode=1777"
+        "nosuid"
+        "nodev"
+      ];
     };
 
   fileSystems."/boot" =

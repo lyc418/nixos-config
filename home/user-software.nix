@@ -110,6 +110,9 @@
     jetbrains.jdk
 
     claude-code
+    (ollama.override {
+        acceleration = "cuda";
+    })
 
     gamescope
     steam-run

@@ -78,6 +78,7 @@
     python313
     python313Packages.ipython
     uv
+    gnome-color-manager
   ];
 
   virtualisation.docker = {
@@ -103,6 +104,7 @@
 
   services.tuned.enable = true;
   services.upower.enable = true;
+  services.colord.enable = true;
   services.printing.enable = true;
   services.desktopManager.gnome.enable = true;
   services.displayManager.gdm.enable = true;
