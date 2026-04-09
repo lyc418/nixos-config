@@ -25,6 +25,7 @@
     ripgrep
     nil
     fzf
+    tree-sitter
     fd
     tree
     emacs
