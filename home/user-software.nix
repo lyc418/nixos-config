@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -73,7 +73,7 @@
     kotlin-language-server
     lua-language-server
     mesonlsp
-    nodePackages.bash-language-server
+    bash-language-server
     ty
     perlnavigator
     rust-analyzer
@@ -120,7 +120,7 @@
     heroic
     lutris
     protonup-qt
-    (wineWowPackages.full.override {
+    (wineWow64Packages.full.override {
       wineRelease = "staging";
       mingwSupport = true;
     })
@@ -170,6 +170,7 @@
         variant = "mocha";
       };
     };
+    gtk4.theme = config.gtk.theme;
   };
   catppuccin = {
     enable = true;

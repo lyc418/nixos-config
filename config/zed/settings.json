@@ -1,7 +1,7 @@
 {
   "theme": {
-    "mode": "dark",
-    "light": "One Light",
+    "mode": "light",
+    "light": "One Dark",
     "dark": "Ayu Dark"
   },
   "icon_theme": {
@@ -25,7 +25,7 @@
   "tabs": {
     "file_icons": true
   },
-  "base_keymap": "Emacs",
+  "base_keymap": "VSCode",
   "mcpServers": {
     "ida-pro-mcp": {
       "command": "/etc/profiles/per-user/ethan/bin/python3",

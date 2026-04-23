@@ -15,15 +15,15 @@
     fontconfig
     freetype
     libxkbcommon
-    xorg.libxcb
-    xorg.libX11
-    xorg.libXi
-    xorg.libXrender
-    xorg.libXext
-    xorg.xcbutilwm
-    xorg.xcbutilimage
-    xorg.xcbutilkeysyms
-    xorg.xcbutilrenderutil
+    libxcb
+    libx11
+    libxi
+    libxrender
+    libxext
+    libxcb-wm
+    libxcb-image
+    libxcb-keysyms
+    libxcb-render-util
     wayland
   ];
   programs.niri = {
@@ -94,13 +94,6 @@
     };
   };
   users.extraGroups.libvirtd.members = [ "ethan" ];
-  virtualisation.virtualbox = {
-    host = {
-      enable = true;
-      enableExtensionPack = true;
-    };
-  };
-  users.extraGroups.vboxusers.members = [ "ethan" ];
 
   services.tuned.enable = true;
   services.upower.enable = true;
