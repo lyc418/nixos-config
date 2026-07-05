@@ -18,6 +18,9 @@
     };
     nixvim = {
       url = "github:nix-community/nixvim";
+    };
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -40,6 +43,7 @@
         modules = [
           ./configuration.nix
           ./noctalia.nix
+          inputs.aagl.nixosModules.default
           star-rail-grub.nixosModules.x86_64-linux.default
           home-manager.nixosModules.home-manager
           {

@@ -98,6 +98,7 @@
     pandoc
     hugo
     typst
+    texliveFull
 
     google-chrome
     microsoft-edge
@@ -107,13 +108,7 @@
 
     quickemu
 
-    android-studio
-    jetbrains.jdk
-
     claude-code
-    (ollama.override {
-        acceleration = "cuda";
-    })
 
     gamescope
     steam-run
@@ -174,6 +169,7 @@
   };
   catppuccin = {
     enable = true;
+    autoEnable = true;
     flavor = "mocha";
     accent = "mauve";
     aerc.enable = true;

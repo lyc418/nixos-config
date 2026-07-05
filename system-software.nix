@@ -32,6 +32,8 @@
   programs.fish.enable = true;
   programs.firefox.enable = true;
   programs.nix-index.enable = true;
+  programs.command-not-found.enable = false;
+  programs.honkers-railway-launcher.enable = true;
   programs.virt-manager.enable = true;
   programs.gnupg.agent = {
     enable = true;
