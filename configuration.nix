@@ -76,6 +76,11 @@
   # network
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
+  networking.networkmanager.connectionConfig = {
+    "ipv4.ignore-auto-dns" = true;
+    "ipv6.ignore-auto-dns" = true;
+  };
   networking.firewall.enable = false;
   networking.nameservers = [
     "1.1.1.1#one.one.one.one"
@@ -84,7 +89,7 @@
   services.resolved = {
     enable = true;
     settings.Resolve = {
-      DNSSEC = "true";
+      DNSSEC = "false";
       Domains = [ "~." ];
       FallbackDNS = [
         "1.1.1.1#one.one.one.one"
