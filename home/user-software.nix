@@ -90,9 +90,8 @@
     pyright
     verible
 
-    libreoffice-qt6-fresh
+    libreoffice-qt
     maestral-gui maestral
-    zotero
     obsidian
     zathura
     pandoc
